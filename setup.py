@@ -93,8 +93,8 @@ else:
     try:
         extension_kwargs = pkgconfig('opencv4', extension_kwargs)
     except RuntimeError:
-        pass # Fallback to opencv package
-    extension_kwargs = pkgconfig('opencv', extension_kwargs)
+        # Fallback to opencv package
+        extension_kwargs = pkgconfig('opencv', extension_kwargs)
     extension_kwargs = pkgconfig('libturbojpeg', extension_kwargs)
 
     extension_kwargs['libraries'].append('pthread')
